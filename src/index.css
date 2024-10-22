@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* .left-menu, .right{
+    display: none;
+} */
+
+.nav{
+    display: none;
+}
+
+.move-text{
+    overflow: hidden;
+    border-right: 0.15rem solid orange;
+    white-space: nowrap;
+    animation: typing 6s steps(50, end) infinite;
+    
+
+}
+
+@keyframes typing{
+    from {
+        width: 0;
+    }
+    to {
+        width: 90%;
+    }
+}
+
+
+@media screen and (max-width:1130px) {
+    .right{
+     display: none;
+  
+    }
+}
+@media screen and (max-width:810px) {
+    .left-menu{
+        display: none;
+       
+    }
+    
+   
+}
+@media  screen and (max-width:400px) {
+    .nav{
+        display: flex;
+       position: fixed;
+       z-index: 9999;
+       width: 100%;
+    }
+    .center{
+      margin-top: 60px;
+      
+    }
+    .rightShow{
+        display: flex;
+        position: absolute;
+        left: 0;
+        top: 60px;
+        z-index: 99;
+        width: 100vw;
+         
+    }
+    .leftShow{
+        display: flex;
+        position: absolute;
+        right: 0;
+        top: 60px;
+        z-index: 999;
+        width: 100vw;
+    }
+    .leftShow div{
+        margin-top: 0;
+    }
+}
