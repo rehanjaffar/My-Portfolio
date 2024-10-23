@@ -1,9 +1,9 @@
 import { ServiceData } from "./Components/ServiceData";
 import SectionTwoCards from "./SectionTwoCards";
 
-export function SectionTwo() {
+export function SectionTwo({bg}) {
     
-    
+  
     return (
         <section className="services flex flex-col items-center xl:w-[970px] lg:ml-[30px] my-5">
             <div className="md:w-[440px] text-center">
@@ -14,7 +14,7 @@ export function SectionTwo() {
                 
                 {ServiceData.map((v, i) => {
                 return(
-                    <SectionTwoCards pitems={v} key={i} />
+                    <SectionTwoCards bg={bg} pitems={v} key={i} />
                 )
             })}
 

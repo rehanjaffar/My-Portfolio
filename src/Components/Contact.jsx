@@ -1,11 +1,16 @@
-export function ContactUs() {
+export function ContactUs({ bg }) {
+      let bgchng;
+    if (bg === false) {
+        bgchng = "bgchng"
+    }
+    
     return (
         <section className="recommend items-center flex flex-col lg:ml-[30px] mt-5">
 
             <div className="w-[70%]">
                     <h1 className="text-[36px] font-semibold p-5">Leave Us Your Info</h1>
                 
-                <form action="" className="py-8 px-5 bg-white">
+                <form action="" className={`py-8 px-5 ${bgchng} bg-white` }>
                     <label htmlFor="" className="text-xl">Your Full Name Required</label> <br />
                     <input type="text" required  className="bg-[gainsboro] h-10 w-full p-3 mb-5"/> <br />
                      <label htmlFor="" className="text-xl">Your Email Required</label> <br />

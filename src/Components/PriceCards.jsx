@@ -1,9 +1,14 @@
 import { RiCheckLine, RiCrossFill } from '@remixicon/react'
 import React from 'react'
 
-export default function PriceCards({pitems}) {
+export default function PriceCards({ pitems, bg }) {
+    let bgchng;
+    if (bg === false) {
+        bgchng = "bgchng"
+    }
+    
   return (
-      <div className='bg-white flex flex-col justify-center items-center lg:w-[350px] rounded-3xl relative'>
+    <div className={`${bgchng} bg-white flex flex-col justify-center items-center lg:w-[350px] rounded-3xl relative` }>
         {pitems.popular === 0 ? <div className='absolute top-0 bg-red-400 w-full text-center'>
               <h1 className='text-white'>Most Popular</h1>
           </div> : false}  

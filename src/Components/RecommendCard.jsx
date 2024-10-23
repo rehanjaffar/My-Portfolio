@@ -1,9 +1,14 @@
 import { RiStarFill } from '@remixicon/react'
 import React from 'react'
 
-export default function RecommendCard({pitems}) {
+export default function RecommendCard({ pitems, bg }) {
+   let bgchng;
+    if (bg === false) {
+        bgchng = "bgchng"
+    }
+    
   return (
-      <div className='bg-white w-[290px] p-3 rounded-3xl'>
+    <div className={ `${bgchng} bg-white w-[290px] p-3 rounded-3xl`}>
           <div className='flex text-red-400'>
               <RiStarFill/>
               <RiStarFill/>

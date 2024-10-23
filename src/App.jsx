@@ -8,11 +8,25 @@ import { RightMenu } from './RightMenu'
 import { SectionFour } from './SectionFour'
 import { SectionThree } from './SectionThree'
 import { NavBar } from './Components/NavBar';
+import HomePage from './Components/HomePage'
+import SecondPage from './Components/SecondPage'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+
 
 function App() {
   
   let [value, setValue] = useState(true);
- let [newval, setNeval] = useState(true)
+  let [newval, setNeval] = useState(true);
+  let [bg, setbg] = useState(true);
+
+  console.log(bg);
+  
+  let chngbg = () => {
+    return (
+      setbg(!bg)
+    )
+  }
+
   let changeVal = () => {
     return (
       setValue(!value)
@@ -28,18 +42,16 @@ let hideVal = () => {
   }
   return (
     <>
-      <NavBar onHandle={ changeVal} onHide={hideVal} />
-      <div className='main flex justify-center w-screen bg-[#E5E5E5]'>
-        
-    {newval ? <RightMenu props = {value} /> : ""}  
-    {value && newval ?  <CenterMenu /> : ""} 
-      <LeftMenu props = {newval}/>
-      </div>
-    {value && newval ? <div className='flex flex-col justify-center w-screen bg-[#E5E5E5]'>
-        <SectionThree />
-        <SectionFour />
-        <ContactUs/>
-        </div> : ""}  
+      <NavBar onHandle={changeVal} onHide={hideVal} />
+      <BrowserRouter>
+        <Routes>
+     
+          <Route exact path='/' element = { <HomePage bg={bg} props={value } newprops={newval} chngbg={chngbg} />}/>
+          <Route exact path='/about' element = {  <SecondPage bg={bg} newprops={newval} chngbg={chngbg}/>}/>
+         
+          </Routes>
+</BrowserRouter>
+   
       </>
   )
 }

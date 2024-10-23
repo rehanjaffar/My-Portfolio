@@ -3,7 +3,7 @@ import { PriceData } from "./Components/PriceData";
 import RecommendCard from "./Components/RecommendCard";
 import { RecommendData } from "./Components/RecommendData";
 
-export function SectionFour() {
+export function SectionFour({bg}) {
     
     
     return (
@@ -15,7 +15,7 @@ export function SectionFour() {
             <div className="flex gap-7 flex-wrap justify-center items-center m-5">
                 {RecommendData.map((v, i)=>{
                     return(
-                <RecommendCard pitems={v } key={i} />
+                <RecommendCard bg={bg} pitems={v } key={i} />
                     )
                 })}
                 

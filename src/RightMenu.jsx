@@ -1,7 +1,12 @@
 import { RiDownload2Fill, RiFacebookFill, RiGithubFill, RiInstagramFill, RiLinkedinFill, RiTwitterFill, RiYoutubeFill } from "@remixicon/react";
 
 
-export function RightMenu({props}) {
+export function RightMenu({ props, bg }) {
+    let bgchng;
+    if (bg === false) {
+        bgchng = "bgchng"
+    }
+
    let newclass
     if (props === false) {
          newclass = "rightShow"
@@ -9,7 +14,7 @@ export function RightMenu({props}) {
     
     
     return (
-         <div className={`right ${newclass} flex flex-col items-center w-[305px] xl:h-[1315px] bg-white`}>
+         <div className={`right ${newclass} ${bgchng} flex flex-col items-center w-[305px] xl:h-[1315px] bg-white`}>
             <div className="profile xl:w-[219px] xl:h-[281px] mt-[50px] mb-[25px]  flex flex-col items-center">
                 <img src="/src/assets/profile.jpeg" alt="" className="rounded-[50%] mb-[18px]"/>
                 <h1 className="text-lg font-medium mb-[12px]">M Rehan Jaffar</h1>
@@ -18,17 +23,17 @@ export function RightMenu({props}) {
              
                 <div>
                     <ul className="list-none">
-                        <li className="inline-flex w-6 h-6 justify-center items-center bg-[rgb(255,180,0)] rounded-[50%] mx-1"><a
+                        <li className="w-7 h-7 inline-flex justify-center items-center bg-[rgb(255,180,0)] rounded-[50%] mx-1"><a
                                 href="#"><RiFacebookFill/></a></li>
-                        <li className="inline-flex w-6 h-6 justify-center items-center bg-[rgb(255,180,0)] rounded-[50%] mx-1"><a
+                        <li className="w-7 h-7 inline-flex justify-center items-center bg-[rgb(255,180,0)] rounded-[50%] mx-1"><a
                                 href="#"><RiInstagramFill/></a></li>
-                        <li className="inline-flex w-6 h-6 justify-center items-center bg-[rgb(255,180,0)] rounded-[50%] mx-1"><a
+                        <li className="w-7 h-7 inline-flex justify-center items-center bg-[rgb(255,180,0)] rounded-[50%] mx-1"><a
                                 href="#"><RiTwitterFill/></a></li>
-                        <li className="inline-flex w-6 h-6 justify-center items-center bg-[rgb(255,180,0)] rounded-[50%] mx-1"><a
+                        <li className="w-7 h-7 inline-flex justify-center items-center bg-[rgb(255,180,0)] rounded-[50%] mx-1"><a
                                 href="#"><RiLinkedinFill/></a></li>
-                        <li className="inline-flex w-6 h-6 justify-center items-center bg-[rgb(255,180,0)] rounded-[50%] mx-1"><a
+                        <li className="w-7 h-7 inline-flex justify-center items-center bg-[rgb(255,180,0)] rounded-[50%] mx-1"><a
                                 href="#"><RiYoutubeFill/></a></li>
-                        <li className="inline-flex w-6 h-6 justify-center items-center bg-[rgb(255,180,0)] rounded-[50%] mx-1"><a
+                        <li className="w-7 h-7 inline-flex justify-center items-center bg-[rgb(255,180,0)] rounded-[50%] mx-1"><a
                                 href="#"><RiGithubFill/></a></li>
 
                     </ul>
